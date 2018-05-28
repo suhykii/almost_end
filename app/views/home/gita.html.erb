@@ -129,15 +129,16 @@
 			<div class="product-image-wrapper">
 					<div class="single-products">
 						<div class="productinfo text-center">
+							 <input type ="hidden" value ="<%= x.id%>" name ="post_id">
 							<img src="<%= x.image.url %>">
 							<h3> <%= x.db_title %><br> </h3>
 							<p><%= x.pprice %>원<br><br></p>
-		
-<button type="button" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-default add-to-cart" data-toggle="modal" data-target="#myModal" value ="<%= x.id%>" name ="post_id">
   MORE
 </button>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -147,12 +148,14 @@
       <div class="modal-body">
         	<% @posts.each do |x| %>
         	   <input type ="hidden" value ="<%= x.id%>" name ="post_id">
+        	   <div class="item_plus">
+        	   	<td><%= x.user.email %></td><br><br>
         	<h3> <%= x.db_title %><br> </h3>
         	<p> <%= x.db_content %></p><br>
-        	<img src ="<%= x.image.url %>">
-        	
+        	<img src ="<%= x.image.url %>"></input>
         	</input>
-        	<%end%>
+        	</div><br>
+        	<%end%><br><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>

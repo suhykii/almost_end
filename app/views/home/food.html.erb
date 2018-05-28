@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -35,10 +35,10 @@
 						<div class="contactinfo">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="/main">홈</a></li>
-								<li><a href="/food">식음료</a>
-								<li><a href="/living">리빙</a>
-								<li><a href="/fashion">패션 & 뷰티</a></li>
-								<li><a href="/gita">기타</a></li>
+								<li><a id = "1" href="/food">식음료</a>
+								<li><a id = "2" href="/living">리빙</a>
+								<li><a id = "3" href="/fashion">패션 & 뷰티</a></li>
+								<li><a id = "4" href="/gita">기타</a></li>
 								<% if user_signed_in? %>
 							    <li><a href="/users/sign_out">[로그아웃]</a><li>
 							    <% else %>
@@ -91,12 +91,12 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="/main" >홈</a></li>
-								<li><a href="/food" class="active">식음료<!--<i class="fa fa-angle-down"></i> --></a>
+								<li><a id = "1" href="/food" class="active">식음료<!--<i class="fa fa-angle-down"></i> --></a>
                             
-								<li><a href="/living">리빙<!-- <i class="fa fa-angle-down"></i> --></a>
+								<li><a id = "2" href="/living">리빙<!-- <i class="fa fa-angle-down"></i> --></a>
  
-								<li><a href="/fashion">패션 & 뷰티</a></li>
-								<li><a href="/gita">기타</a></li>
+								<li><a id = "3" href="/fashion">패션 & 뷰티</a></li>
+								<li><a id = "4" href="/gita">기타</a></li>
 								
 							</ul>
 						</div>
@@ -122,8 +122,8 @@
 
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">제품 목록</h2>
-
-	<div class="productinfo2 text-center">
+    
+	<div class="productinfo2 text-center" id = "1">
 		<% @posts.each do |x| %>
 			<div class="col-sm-4","col-xs-4">
 			<div class="product-image-wrapper">
@@ -146,11 +146,12 @@
       </div>
       <div class="modal-body">
         	<% @posts.each do |x| %>
+        	<td><%= x.user.email %></td><br><br>
         	<h3> <%= x.db_title %><br> </h3>
         	<p> <%= x.db_content %></p><br>
-        	<img src ="<%= x.image.url %>">
-        	<%end%>
-      </div>
+        	<img src ="<%= x.image.url %>"><br>
+        	<%end%><br><br>
+      </div><br><br>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
       </div>

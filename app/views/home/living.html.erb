@@ -146,10 +146,11 @@
       </div>
       <div class="modal-body">
         	<% @posts.each do |x| %>
+        	<td><%= x.user.email %></td><br><br>
         	<h3> <%= x.db_title %><br> </h3>
         	<p> <%= x.db_content %></p><br>
-        	<img src ="<%= x.image.url %>">
-        	<%end%>
+        	<img src ="<%= x.image.url %>"><br>
+        	<%end%><br><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>

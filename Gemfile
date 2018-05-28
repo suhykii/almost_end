@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'cancancan'
+gem 'rolify'
 gem 'kaminari'
 gem 'devise'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
