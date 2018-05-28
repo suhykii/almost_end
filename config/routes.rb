@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   post '/create' => 'home#create'
 
   get '/read' => 'home#read'
+  
+  get '/food' => 'home#food'
+  
+  get '/fashion' => 'home#fashion'
+  
+  get '/living' => 'home#living'
 
 
 # main(index.html) = main
