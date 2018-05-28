@@ -31,8 +31,6 @@ class HomeController < ApplicationController
     @post.post_id =params[:post_id]
     @post.user =current_user
     @post.save
-    @article = Article.find(params[:id])
-  authorize! :read, @article
     
     
     redirect_to '/gita'

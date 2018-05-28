@@ -181,9 +181,12 @@ function setComma(inNum){
 
 
   <!--이미지파일올리기-->
-<%= file_field_tag 'image' %><br>
+ <%= file_field_tag 'file', :accept => 'image/png,image/gif,image/jpeg' %> <br>
+
 <!--제품등록하기버튼-->
   <button type="submit" class="btn btn-default">제품등록</button>
+  
+
 </form>
 </div>
 
